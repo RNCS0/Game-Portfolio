@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNCS' Game Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mobile-warning" class="hidden">
+        <div class="warning-content">
+            <h2>⚠️ Mobile Not Supported</h2>
+            <p>This game is designed for desktop browsers only.</p>
+            <p>Please access this website from a computer for the best experience.</p>
+        </div>
+    </div>
+    <!-- Title Screen -->
+    <div id="title-screen">
+        <img id="title-logo" src="img/title.png" alt="Game Title">
+        <div id="start-button" class="container">
+            <button class="btn">Start</button>
+        </div>
+        <div id="title-controls">
+            <p>Use <strong>Arrow Keys / WASD</strong> to move and jump</p>
+            <p>Press <strong>E</strong> near doors to visit websites</p>
+        </div>
+    </div>
+
+    <!-- PLatforms -->
+    <div id="game-container" class="hidden">
+        <img id="player" alt="Player character">
+        <div class="platform" id="ground"></div>
+        <div class="platform" id="platform1"></div>
+        <div class="platform" id="platform2"></div>
+        <div class="platform" id="platform3"></div>
+        <div class="platform" id="platform4"></div>
+        <div class="platform" id="platform5"></div>
+        <div class="platform" id="platform6"></div>
+        
+    <!-- Doors -->
+        <div class="door" id="ground-door"></div>
+        <div class="door" id="platform1-door"></div>
+        <div class="door" id="platform2-door"></div>
+        <div class="door" id="platform3-door"></div>
+        <div class="door" id="platform4-door"></div>
+        <div class="door" id="platform5-door"></div>
+        <div class="door" id="platform6-door"></div>
+        
+        <div id="prompt" class="hidden">Press E</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

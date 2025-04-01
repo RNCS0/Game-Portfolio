@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('img/background.jpg');
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#player {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 90px;
+    left: 100px;
+    z-index: 10;
+    image-rendering: pixelated;
+    transition: transform 0.1s;
+}
+/* Platform */
+.platform {
+    position: absolute;
+    background: #4CAF50;
+    border: 2px solid #2E7D32;
+    z-index: 5;
+}
+/* Platform Positions */
+#ground {
+    width: 100%;
+    height: 30px; 
+    bottom: 0;
+    left: 0;
+    background: url('img/ground.png') repeat-x; 
+    border: none;
+    image-rendering: pixelated;
+}
+
+#platform1 {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    bottom: 140px;
+    left: 400px;
+    background: url('img/valorant platform.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+
+
+#platform2 {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    bottom: 300px;
+    left: 800px;
+    background: url('img/star rail platform.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+
+#platform3 {
+    position: absolute;
+    width: 550px;
+    height: 100px;
+    bottom: 450px;
+    left: 200px;
+    background: url('img/platform1.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+
+#platform4 {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    bottom: 450px;
+    left: 1180px;
+    background: url('img/github platform.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+
+#platform5 {
+    position: absolute;
+    width: 460px;
+    height: 100px;
+    bottom: 650px;
+    left: 680px;
+    background: url('img/sand platform.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+
+#platform6 {
+    position: absolute;
+    width: 360px;
+    height: 100px;
+    bottom: 240px;
+    left: 1480px;
+    background: url('img/steam platform.png') no-repeat;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border: none;
+}
+/* Door */
+.door {
+    position: absolute;
+    width: 100px; 
+    height: 120px;
+    background: transparent;
+    border: none; 
+    z-index: 8;
+}
+
+.door::before {
+    display: none;
+}
+
+/* Door Positions */
+#ground-door {
+    bottom: 30px;
+    left: 1460px;
+    background-image: url('img/youtube door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated; 
+}
+
+#platform1-door {
+    bottom: 240px;
+    left: 500px;
+    background-image: url('img/valorant door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+#platform2-door {
+    bottom: 400px;
+    left: 900px;
+    background-image: url('img/star rail door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated; 
+}
+
+#platform3-door {
+    bottom: 550px;
+    left: 240px;
+    background-image: url('img/genshin door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+#platform4-door {
+    bottom: 550px;
+    left: 1280px;
+    background-image: url('img/github door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated; 
+}
+
+#platform5-door {
+    bottom: 340px;
+    left: 1700px;
+    background-image: url('img/steam door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+#platform6-door {
+    bottom: 750px;
+    left: 900px;
+    background-image: url('img/portfolio door.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+/* Prompt */
+#prompt {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    max-width: 150px;
+    padding: 10px 15px;
+    background: #ccb480;
+    color: black;
+    text-align: center;
+    position: relative;
+    box-shadow: 
+        inset -4px 2px 1px 1px rgba(0,0,0,0.2),
+        inset -4px -2px 1px 1px rgba(255,255,255,0.4),
+        inset 4px 0px 1px 1px rgba(255,255,255,0.4);
+    transition: all 0.1s ease;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 15;
+  }
+  
+  
+  #prompt:active {
+    top: 5px;
+    box-shadow: 
+      -4px 2px 1px 1px grey,
+      -4px -2px 1px 1px lightgray,
+      4px 0px 1px 1px lightgray; 
+  }
+  
+  #prompt::after {
+    content: '';
+    background: transparent;
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+    left: -3.2px;
+    top: 0;
+    width: 100%;
+    height: 90%;
+    z-index: -99;
+  }
+  
+  #prompt::before {
+    content: '';
+    background: transparent;
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 96%;
+    height: 100%;
+    z-index: -99;
+  }
+
+
+.hidden {
+    display: none;
+}
+
+#controls {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    z-index: 20;
+    text-align: center;
+}
+
+#controls p {
+    margin: 5px 0;
+}
+
+/* Title Screen */
+#title-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #6d6d6d 0%, #4d4d4d 50%, #2d2d2d 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    text-align: center;
+}
+
+/* Title Logo */
+#title-logo {
+    width: 600px; 
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 2rem;
+    image-rendering: pixelated; 
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5)); 
+}
+
+#title-screen h1 {
+    display: none;
+}
+
+#start-button {
+    all: unset;
+  }
+
+#title-screen .pixel-button {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 2rem auto;
+}
+
+
+/* Button */
+.btn {
+    font-size: 1.2em;
+    font-family: 'Press Start 2P', cursive;
+    width: 200px;
+    height: 70px;
+    background: #ccb480;
+    border: 0px;
+    position: relative;
+    box-shadow: 
+      inset -4px 2px 1px 1px grey,
+      inset -4px -2px 1px 1px lightgray,
+      inset 4px 0px 1px 1px lightgray;   
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+      background-color: #8a7a58;
+  }
+  
+  .btn:active {
+    top: 5px;
+    box-shadow: 
+      -4px 2px 1px 1px grey,
+      -4px -2px 1px 1px lightgray,
+      4px 0px 1px 1px lightgray; 
+  }
+  
+  .btn::after {
+    content: '';
+    background: black;
+    position: absolute;
+    left: -2.5%;
+    top: 0;
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .btn::before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 113%;
+    z-index: -1;
+  }
+
+#title-controls {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    width: auto;
+    max-width: 80%;
+    padding: 20px;
+    background: #ccb480; 
+    color: black;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+    box-shadow: 
+        inset -4px 2px 1px 1px rgba(0,0,0,0.2),
+        inset -4px -2px 1px 1px rgba(255,255,255,0.4),
+        inset 4px 0px 1px 1px rgba(255,255,255,0.4);
+    transition: all 0.1s ease;
+  }
+  
+  
+  #title-controls:active {
+    top: 5px;
+    box-shadow: 
+      -4px 2px 1px 1px grey,
+      -4px -2px 1px 1px lightgray,
+      4px 0px 1px 1px lightgray; 
+  }
+  
+  #title-controls::after {
+    content: '';
+    background: black;
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: calc(100% + 10px);
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #title-controls::before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 113%;
+    z-index: -1;
+  }
+
+#controls {
+    display: none;
+}
+
+/* Game container */
+#game-container.hidden {
+    display: none;
+}
+
+
+/* Mobile Warning */
+#mobile-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+}
+
+#mobile-warning.hidden {
+    display: none;
+}
+
+.warning-content {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+    border: 2px solid #ff3333;
+}
+
+.warning-content h2 {
+    color: #ff3333;
+    margin-bottom: 1rem;
+}
+
+.warning-content p {
+    margin-bottom: 1rem;
+}
+
+#continue-button {
+    padding: 10px 20px;
+    background: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#continue-button:hover {
+    background: #ff5555;
+}
+
+/* Responsive */
+@media (hover: hover) and (pointer: fine) {
+    #mobile-warning {
+        display: none !important;
+    }
+}
+
+.warning-content {
+    max-width: 90%;
+    padding: 2.5rem;
+    font-size: 1.2rem;
+}
+
+#continue-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+}
